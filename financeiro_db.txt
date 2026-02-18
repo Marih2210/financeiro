@@ -1,0 +1,27 @@
+CREATE DATABASE financeiro_db;
+
+CREATE SCHEMA IF NOT EXISTS financeiro;
+
+CREATE TABLE financeiro.pessoa (
+    id SERIAL PRIMARY KEY,,
+    nome VARCHAR(200) NOT NULL,
+    idade INTEGER NOT NULL
+);
+
+CREATE TABLE financeiro.categoria (
+    id SERIAL PRIMARY KEY,
+    descricao VARCHAR(400) NOT NULL,
+    finalidade VARCHAR(10) NOT NULL 
+);
+
+CREATE TABLE financeiro.transacoes (
+    id SERIAL PRIMARY KEY,
+    descricao VARCHAR(400) NOT NULL,
+    valor DECIMAL(10,2) NOT NULL,    
+    tipo VARCHAR(10) NOT NULL,
+    categoria_id INTEGER NOT NULL,
+    pessoa_id INTEGER NOT NULL,
+    FOREIGN KEY (pessoa_id) REFERENCES financeiro.pessoa(id) ON DELETE CASCADE,
+    FOREIGN KEY (categoria_id) REFERENCES financeiro.categoria(id)
+);
+

@@ -1,0 +1,141 @@
+﻿@host = http://localhost:5006
+
+##
+
+# CATEGORIA
+###
+
+GET {{host}}/api/categoria
+Accept: application/json
+
+###
+
+GET {{host}}/api/categoria/1
+Accept: application/json
+
+###
+
+POST {{host}}/api/categoria
+Content-Type: application/json
+Accept: application/json
+
+{
+  "descricao": "Alimentação",
+  "finalidade": "despesa"
+}
+
+###
+
+PUT {{host}}/api/categoria/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "descricao": "Alimentação e Refeições",
+  "finalidade": "despesa"
+}
+
+###
+
+DELETE {{host}}/api/categoria/1
+Accept: application/json
+
+###
+
+###
+# PESSOA
+###
+
+GET {{host}}/api/pessoa
+Accept: application/json
+
+###
+
+GET {{host}}/api/pessoa/1
+Accept: application/json
+
+###
+
+POST {{host}}/api/pessoa
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nome": "João Silva",
+  "idade": 30
+}
+
+###
+
+PUT {{host}}/api/pessoa/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nome": "João Santos",
+  "idade": 31
+}
+
+###
+
+DELETE {{host}}/api/pessoa/1
+Accept: application/json
+
+###
+
+###
+# TRANSAÇÕES
+###
+
+GET {{host}}/api/transacoes
+Accept: application/json
+
+###
+
+GET {{host}}/api/transacoes/1
+Accept: application/json
+
+###
+
+GET {{host}}/api/transacoes/pessoa/1
+Accept: application/json
+
+###
+
+GET {{host}}/api/transacoes/categoria/1
+Accept: application/json
+
+###
+
+POST {{host}}/api/transacoes
+Content-Type: application/json
+Accept: application/json
+
+{
+  "descricao": "Compra no supermercado",
+  "valor": 150.50,
+  "tipo": "despesa",
+  "categoriaId": 1,
+  "pessoaId": 1
+}
+
+###
+
+PUT {{host}}/api/transacoes/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "descricao": "Compra no supermercado - atualizado",
+  "valor": 175.90,
+  "tipo": "despesa",
+  "categoriaId": 1,
+  "pessoaId": 1
+}
+
+###
+
+DELETE {{host}}/api/transacoes/1
+Accept: application/json
+
+###
