@@ -14,6 +14,7 @@ Sistema completo de gestão financeira com **React + TypeScript** no frontend e 
 - CSS Modules.
 
 ### Backend (CRUD.Controle)
+- Utilização da IDE Visual Studio;
 - .NET 8;
 - Dapper (ORM);
 - PostgreSQL.
