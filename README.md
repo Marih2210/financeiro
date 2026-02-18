@@ -62,8 +62,18 @@ Abra o **pgAdmin**, conecte-se ao servidor local e crie uma nova database, chama
 
 ## ⚙️ Configuração do Backend
 ### 1. Configurar string de conexão
-- No arquivo CRUD.Controle.Services/appsettings.json;
-- Caso a aplicação esteja rodando em outra porta, verifique as referências à "http://localhost:5006".
+- No arquivo CRUD.Controle/appsettings.json realizar as mudanças necessárias para as strings de conexão da sua máquina.
+
+### 2. Restaurar pacotes do Visual Studio
+- Entrar na pasta que está no mesmo nível do arquivo de configuração do projeto ".csproj":
+  - /financeiro/CRUD.Controle
+  
+-  Executar o comando para restaurar os pacotes:
+  - dotnet restore
+
+- Rodar backend:
+  - Por fim rodar o projeto do backend e verificar a porta em que está hospedado;
+  - Caso a aplicação esteja rodando em outra porta, verifique as referências à "http://localhost:5006".
 
 ## 🎨 Configuração do Frontend
 ### 1. Instalar dependências
