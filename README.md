@@ -6,14 +6,14 @@ Sistema completo de gestão financeira com **React + TypeScript** no frontend e 
 
 ## 🚀 Tecnologias Utilizadas
 
-### Frontend
+### Frontend (frontend-financeiro)
 - React 19;
 - TypeScript;
 - React Router DOM;
 - Axios;
 - CSS Modules.
 
-### Backend
+### Backend (CRUD.Controle)
 - .NET 8;
 - Dapper (ORM);
 - PostgreSQL.
