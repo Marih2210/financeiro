@@ -83,4 +83,5 @@ Abra o **pgAdmin**, conecte-se ao servidor local e crie uma nova database, chama
 - Ajustar as referências à API em frontend-financeiro/src/apis/clientApi.ts, caso necessário;
 
 ### 3. Rodar Frontend
-- npm run dev
+- npm run dev;
+- Caso o frontend esteja rodando em porta diferente de 'http://localhost:5173' ajuste o arquivo no backend 'CRUD.Controle/Program.cs' referenciando a nova porta, para evitar erros de CORS.
