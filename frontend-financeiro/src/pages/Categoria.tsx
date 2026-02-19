@@ -6,7 +6,12 @@ import { ConfirmModal } from '../components/ConfirmModal';
 import type { Categoria } from '../models/categoriaModel';
 import '../styles/Pages.css';
 
+    // Página de categorias
+
 export const CategoriaPage: React.FC = () => {
+
+    // estados, navegação
+
     const navigate = useNavigate();
     const [categorias, setCategorias] = useState<Categoria[]>([]);
     const [loading, setLoading] = useState(true);
@@ -22,9 +27,13 @@ export const CategoriaPage: React.FC = () => {
         finalidade: 'despesa' 
     });
 
+    // No init da página carrega as categorias
+
     useEffect(() => {
         carregarCategorias();
     }, []);
+
+    // Função com o método GET que carrega todas as categorias
 
     const carregarCategorias = async () => {
         try {
@@ -40,6 +49,8 @@ export const CategoriaPage: React.FC = () => {
         }
     };
 
+    // Método que chama o INSERT para criação de uma nova categoria
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
@@ -53,10 +64,14 @@ export const CategoriaPage: React.FC = () => {
         }
     };
 
+    // Método que chama o modal de confirmação de delete para exclusão de categoria
+
     const confirmDelete = (id: number) => {
         setCategoriaToDelete(id);
         setIsConfirmOpen(true);
     };
+
+    // Faz a exclusão após a confirmação
 
     const handleDelete = async () => {
         if (!categoriaToDelete) return;

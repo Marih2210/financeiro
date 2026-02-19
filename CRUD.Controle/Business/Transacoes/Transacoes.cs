@@ -1,4 +1,7 @@
-﻿namespace CRUD.Controle.Business.Transacoes
+﻿// Referência de negócios e tratamentos necessários
+// aos métodos de dados de acesso de transacoes
+
+namespace CRUD.Controle.Business.Transacoes
 {
     public class Transacoes
     {

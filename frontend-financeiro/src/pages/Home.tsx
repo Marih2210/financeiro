@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css';
 
+// Página Home para navegar para as outras páginas de interesse Pessoas, Transacoes e Categorias
+
 export const HomePage: React.FC = () => {
     const navigate = useNavigate();
 

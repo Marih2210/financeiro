@@ -12,6 +12,8 @@ interface ConfirmModalProps {
     type?: 'danger' | 'warning' | 'info';
 }
 
+// Modal criado para a confirmação de exclusão da pessoa/categoria (criado com o intuito de ser reutilizado)
+
 export const ConfirmModal: React.FC<ConfirmModalProps> = ({
     isOpen,
     onClose,

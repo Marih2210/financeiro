@@ -7,6 +7,8 @@ import { NovaTransacaoPage } from '../pages/NovaTransacao';
 import { PessoaTotaisPage } from '../pages/PessoaTotais';
 import { CategoriaTotais } from "../pages/CategoriaTotais";
 
+// Arquivo criado para organizar as rotas de cada uma das páginas existentes
+
 const router = createBrowserRouter([
     {
         path: '/',

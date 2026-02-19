@@ -1,4 +1,7 @@
-﻿namespace CRUD.Controle.Business.Pessoa
+﻿// Referência de negócios e tratamentos necessários
+// aos métodos de dados de acesso de pessoas
+
+namespace CRUD.Controle.Business.Pessoa
 {
     public class Pessoa
     {

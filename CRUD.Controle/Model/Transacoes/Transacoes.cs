@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
+// Model Transacoes
+
 namespace CRUD.Controle.Model.Transacoes
 {
     [DataContract]

@@ -4,6 +4,8 @@ using CRUD.Controle.Model.Categoria;
 using CRUD.Controle.Model.Result;
 using CRUD.Controle.Model.Enum;
 
+// Controller de Categoria com conexão das classes de negócios e geração dos endpoints de API
+
 namespace CRUD.Controle.Services.Controllers
 {
     [ApiController]

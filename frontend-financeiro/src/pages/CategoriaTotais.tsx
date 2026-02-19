@@ -6,6 +6,10 @@ import type { Categoria } from '../models/categoriaModel';
 import type { Transacao } from '../models/transacoesModel';
 import '../styles/Pages.css';
 
+// Página criada para exibição dos relatórios com totais por categoria e gerais
+
+// Interface que estende Categoria com os campos de interesse calculados
+
 interface CategoriaComTotais extends Categoria {
     totalReceitas: number;
     totalDespesas: number;
@@ -20,6 +24,9 @@ interface TotaisGeraisCategoria {
 }
 
 export const CategoriaTotais: React.FC = () => {
+
+    // estados, navegação 
+
     const navigate = useNavigate();
     const [categoriasComTotais, setCategoriasComTotais] = useState<CategoriaComTotais[]>([]);
     const [totaisGerais, setTotaisGerais] = useState<TotaisGeraisCategoria>({
@@ -31,9 +38,13 @@ export const CategoriaTotais: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
+    // Carregar os dados do relatório no init da página
+    
     useEffect(() => {
         carregarDados();
     }, []);
+
+    // Busca de categorias e transações para calcular os totais
 
     const carregarDados = async () => {
         try {
@@ -85,6 +96,8 @@ export const CategoriaTotais: React.FC = () => {
             setLoading(false);
         }
     };
+
+    // Formatar para moeda do Brasil, com dois pontos após a vírgula: 0,00
 
     const formatarValor = (valor: number) => {
         return valor.toLocaleString('pt-BR', { 

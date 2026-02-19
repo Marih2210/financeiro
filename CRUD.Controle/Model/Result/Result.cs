@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
+// Model Result para facilitar o tratamento do response, error, message, warning e item
+
 namespace CRUD.Controle.Model.Result
 {
     [DataContract]

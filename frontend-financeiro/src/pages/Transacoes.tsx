@@ -9,6 +9,8 @@ import type { Pessoa } from '../models/pessoaModel';
 import type { Categoria } from '../models/categoriaModel';
 import '../styles/Pages.css';
 
+// Página que traz todas as transações realizadas no sistema
+
 export const TransacaoPage: React.FC = () => {
     const navigate = useNavigate();
     const [transacoes, setTransacoes] = useState<Transacao[]>([]);
@@ -20,9 +22,13 @@ export const TransacaoPage: React.FC = () => {
     const [isConfirmOpen, setIsConfirmOpen] = useState(false);
     const [transacaoToDelete, setTransacaoToDelete] = useState<number | null>(null);
 
+    // Carrega os dados no init da páfina
+
     useEffect(() => {
         carregarDados();
     }, []);
+
+    // Traz todas as transações, pessoas e categorias associadas nas transações (getAll)
 
     const carregarDados = async () => {
         try {
@@ -61,14 +67,20 @@ export const TransacaoPage: React.FC = () => {
         }
     };
 
+    // Formato para moeda BRL, 0.00
+
     const formatarValor = (valor: number) => {
         return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     };
+
+    // Busca o nome da pessoa relacionada à transação
 
     const getNomePessoa = (pessoaId: number) => {
         const pessoa = pessoas.find(p => p.id === pessoaId);
         return pessoa?.nome || '-';
     };
+
+    // Busca a descricao da categoria relacionada à transação
 
     const getDescricaoCategoria = (categoriaId: number) => {
         const categoria = categorias.find(c => c.id === categoriaId);

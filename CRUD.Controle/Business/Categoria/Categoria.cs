@@ -1,4 +1,7 @@
-﻿namespace CRUD.Controle.Business.Categoria
+﻿// Referência de negócios e tratamentos necessários
+// aos métodos de dados de acesso de categoria
+
+namespace CRUD.Controle.Business.Categoria
 {
     public class Categoria
     {

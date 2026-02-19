@@ -1,3 +1,5 @@
+// Model de transacoes
+
 export interface Transacao {
     id?: number;
     descricao: string;

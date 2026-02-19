@@ -8,6 +8,8 @@ interface ModalProps {
     children: React.ReactNode;
 }
 
+// Modal criado para a exibicão das telas de add de pessoa/categoria/transacao (criado com o intuito de ser reutilizado)
+
 export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     useEffect(() => {
         const handleEsc = (e: KeyboardEvent) => {

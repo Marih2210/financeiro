@@ -16,6 +16,8 @@ namespace CRUD.Controle.DataAccess.Transacoes
             this.connection = new NpgsqlConnection(connString);
         }
 
+        // Método getAll com query especifica para Transacao
+
         public List<Model.Transacoes.Transacoes> GetAll() 
         {
             string sql = @"
@@ -32,6 +34,8 @@ namespace CRUD.Controle.DataAccess.Transacoes
             return new TransacoesMapper().Map(items).ToList();  
         }
 
+        // Método getById com query especifica para Transacao
+
         public Model.Transacoes.Transacoes? GetById(int id)  
         {
             string sql = @"
@@ -47,6 +51,8 @@ namespace CRUD.Controle.DataAccess.Transacoes
             var items = this.connection.Query(sql, new { id });
             return new TransacoesMapper().Map(items).FirstOrDefault();
         }
+
+        // Método GetByIdPessoa com query especifica validando idPessoa para Transacao 
 
         public List<Model.Transacoes.Transacoes> GetByIdPessoa(int pessoaId)
         {
@@ -65,6 +71,8 @@ namespace CRUD.Controle.DataAccess.Transacoes
             return new TransacoesMapper().Map(items).ToList();
         }
 
+        // Método GetByCategoriaId com query especifica validando idCategoria para Transacao 
+
         public List<Model.Transacoes.Transacoes> GetByCategoriaId(int categoriaId)
         {
             string sql = @"
@@ -81,6 +89,8 @@ namespace CRUD.Controle.DataAccess.Transacoes
             var items = this.connection.Query(sql, new { categoriaId });
             return new TransacoesMapper().Map(items).ToList();
         }
+
+        // Método Insert com query especifica para Transacao
 
         public int Insert(Model.Transacoes.Transacoes transacao)
         {
@@ -110,6 +120,8 @@ namespace CRUD.Controle.DataAccess.Transacoes
             });
         }
 
+        // Método Upsate com query especifica para Transacao
+
         public int Update(Model.Transacoes.Transacoes transacao)
         {
             string sql = @"
@@ -131,6 +143,8 @@ namespace CRUD.Controle.DataAccess.Transacoes
                 pessoa_id = transacao.PessoaId
             });
         }
+
+        // Método Delete com query especifica para Transacao
 
         public int Delete(int id)
         {

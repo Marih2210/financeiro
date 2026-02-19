@@ -6,7 +6,12 @@ import { ConfirmModal } from '../components/ConfirmModal';
 import type { Pessoa } from '../models/pessoaModel';
 import '../styles/Pages.css';
 
+// Página de Pessoas
+
 export const PessoaPage: React.FC = () => {
+
+    // estados e navegação
+
     const navigate = useNavigate();
     const [pessoas, setPessoas] = useState<Pessoa[]>([]);
     const [loading, setLoading] = useState(true);
@@ -20,9 +25,13 @@ export const PessoaPage: React.FC = () => {
     
     const [formData, setFormData] = useState<Omit<Pessoa, 'id'>>({ nome: '', idade: 0 });
 
+    // Carregas as pessoas no init da página 
+
     useEffect(() => {
         carregarPessoas();
     }, []);
+
+    // Pega todas as pessoas cadatradas
 
     const carregarPessoas = async () => {
         try {
@@ -37,6 +46,8 @@ export const PessoaPage: React.FC = () => {
             setLoading(false);
         }
     };
+
+    // Atualiza ou cria nova pessoa, vericando se ela já existe
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -61,6 +72,8 @@ export const PessoaPage: React.FC = () => {
         }
     };
 
+    // Edição pessoa
+
     const handleEdit = (pessoa: Pessoa) => {
         setFormData({ nome: pessoa.nome, idade: pessoa.idade });
         setPessoaEditando(pessoa);
@@ -68,10 +81,14 @@ export const PessoaPage: React.FC = () => {
         setIsModalOpen(true);
     };
 
+    // Abre modal da confirmação da exclusão
+ 
     const confirmDelete = (id: number) => {
         setPessoaToDelete(id);
         setIsConfirmOpen(true);
     };
+
+    // Confirmar a exclusão da pessoa
 
     const handleDelete = async () => {
         if (!pessoaToDelete) return;
@@ -85,13 +102,19 @@ export const PessoaPage: React.FC = () => {
         }
     };
 
+    // Nova transação associada ao id da pessoa selecionada
+
     const handleNovaTransacao = (pessoaId: number) => {
         navigate('/transacoes/nova', { state: { pessoaId } });
     };
 
+    // Consultar totais por pessoa e gerais
+
     const handleConsultarTotais = () => {
         navigate('/pessoas/totais');
     };
+
+    // Abrir modal de add 
 
     const openModal = () => {
         setFormData({ nome: '', idade: 0 });

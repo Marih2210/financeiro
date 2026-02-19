@@ -8,9 +8,14 @@ import type { Categoria } from '../models/categoriaModel';
 import type { Pessoa } from '../models/pessoaModel';  
 import '../styles/Pages.css';
 
+// Página de Nova Transacao
+
 type TipoTransacao = 'despesa' | 'receita';
 
 export const NovaTransacaoPage: React.FC = () => {
+
+    // estados e navegacao 
+
     const navigate = useNavigate();
     const location = useLocation();
     const pessoaId = location.state?.pessoaId || 0;
@@ -34,6 +39,8 @@ export const NovaTransacaoPage: React.FC = () => {
         pessoaId: pessoaId
     });
 
+    // Carrega os dados da nova transação no init da página 
+
     useEffect(() => {
         carregarDados();
     }, [pessoaId]);
@@ -43,6 +50,8 @@ export const NovaTransacaoPage: React.FC = () => {
             setNovaTransacao(prev => ({ ...prev, pessoaId }));
         }
     }, [pessoaId]);
+
+    // Busca os dados da pessoa e categorias da API para associar à nova transação
 
     const carregarDados = async () => {
         try {
@@ -69,6 +78,8 @@ export const NovaTransacaoPage: React.FC = () => {
         }
     };
 
+    // Método para filtrar as categorias baseado no tipo selecionado
+
     const categoriasFiltradas = React.useMemo(() => {
         if (!novaTransacao.tipo) return categorias;
         
@@ -76,6 +87,8 @@ export const NovaTransacaoPage: React.FC = () => {
             cat.finalidade === novaTransacao.tipo || cat.finalidade === 'ambas'
         );
     }, [categorias, novaTransacao.tipo]);
+
+    // Cria nova transação associada ao id da pessoa
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

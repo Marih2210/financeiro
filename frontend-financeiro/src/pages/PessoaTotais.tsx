@@ -6,6 +6,10 @@ import type { Pessoa } from '../models/pessoaModel';
 import type { Transacao } from '../models/transacoesModel';
 import '../styles/Pages.css';
 
+// Página de Pessoas com os totais 
+
+// Interface que estende Pessoa com os campos de interesse calculados de totais
+
 interface PessoaComTotais extends Pessoa {
     totalReceitas: number;
     totalDespesas: number;
@@ -20,6 +24,9 @@ interface TotaisGerais {
 }
 
 export const PessoaTotaisPage: React.FC = () => {
+
+    // estados e navegação da página
+
     const navigate = useNavigate();
     const [pessoasComTotais, setPessoasComTotais] = useState<PessoaComTotais[]>([]);
     const [totaisGerais, setTotaisGerais] = useState<TotaisGerais>({
@@ -31,9 +38,13 @@ export const PessoaTotaisPage: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
+    // Carrega os dados no init da página
+
     useEffect(() => {
         carregarDados();
     }, []);
+
+    // Traz os dados de pessoas e transações para calculo dos totais por pessoa e gerais
 
     const carregarDados = async () => {
         try {
@@ -85,6 +96,8 @@ export const PessoaTotaisPage: React.FC = () => {
             setLoading(false);
         }
     };
+
+    //  Formata para BRL com 2 casas decimais, 0.00
 
     const formatarValor = (valor: number) => {
         return valor.toLocaleString('pt-BR', { 

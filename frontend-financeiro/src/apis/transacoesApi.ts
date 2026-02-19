@@ -1,6 +1,8 @@
-import { api } from './clientApi';
+import { api } from './clientApi'; // --> Conexão  do axios para fazer as requisições HTTP com o backend
 import type { Transacao } from '../models/transacoesModel';
 import type { Result } from '../models/resultModel';
+
+// API Transacoes - criação do objeto com todos os métodos CRUD presente no backend (a aplicação não utiliza todos)
 
 export const TransacoesAPI = {
     getAll: async (): Promise<Transacao[]> => {

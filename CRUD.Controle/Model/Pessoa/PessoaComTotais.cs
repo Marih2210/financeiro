@@ -1,5 +1,7 @@
 ﻿using System.Runtime.Serialization;
 
+// Model Pessoa com totais
+
 namespace CRUD.Controle.Model.Pessoa;
 
 [DataContract]

@@ -6,6 +6,8 @@ using System.Linq;
 using CRUD.Controle.DataAccess.Base;
 using CRUD.Controle.DataAccess.Mappers;
 
+// Camada de acesso aos dados para Categoria
+
 namespace CRUD.Controle.DataAccess.Categoria
 {
     public class Categoria : BaseDAL
@@ -15,6 +17,8 @@ namespace CRUD.Controle.DataAccess.Categoria
             var connString = GetConnectionString(); 
             this.connection = new NpgsqlConnection(connString);
         }
+
+        // Método getAll com query relacionada a table do bd financeiro
 
         public List<Model.Categoria.Categoria> GetAll()
         {
@@ -29,6 +33,8 @@ namespace CRUD.Controle.DataAccess.Categoria
             return new CategoriaMapper().Map(items).ToList();
         }
 
+        // Método Insert categoria com query especifica ao bd
+
         public int Insert(Model.Categoria.Categoria categoria)
         {
             string sql = @"
@@ -42,6 +48,8 @@ namespace CRUD.Controle.DataAccess.Categoria
                 finalidade = categoria.Finalidade?.ToLower().Trim()
             });
         }
+
+        // Método Update categoria com query especifica ao bd
 
         public int Update(Model.Categoria.Categoria categoria)
         {
@@ -58,6 +66,8 @@ namespace CRUD.Controle.DataAccess.Categoria
                 finalidade = categoria.Finalidade?.ToLower().Trim()
             });
         }
+
+        // Método Delete categoria com query especifica ao bd
 
         public int Delete(int id)
         {

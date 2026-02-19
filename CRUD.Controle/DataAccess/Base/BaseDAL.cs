@@ -4,6 +4,10 @@ using System.Data;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
+// Classe que vai gerencia a conexão com o banco de dados PostgreSQL, 
+// carregando a string de conexão do appsettings.json via construtor e 
+// implementando IDisposable para garantir o fechamento da conexão corretamente.
+
 namespace CRUD.Controle.DataAccess.Base
 {
     public abstract class BaseDAL : IDisposable

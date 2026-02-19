@@ -4,6 +4,8 @@ using CRUD.Controle.Model.Transacoes;
 using CRUD.Controle.Model.Result;
 using CRUD.Controle.Model.Enum;
 
+// Controller de Transacoes com conexão das classes de negócios e geração dos endpoints da API
+
 namespace CRUD.Controle.Services.Controllers
 {
     [ApiController]

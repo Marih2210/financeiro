@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
+// Classe que vai extrair valores tipados dos objetos do Dapper, 
+// tratando as conversões tanto para string (com trim), 
+// DateTime e outros tipos, com o fallback para valores padrão em caso de erro.
+
 namespace CRUD.Controle.DataAccess.Helpers
 {
     internal static class DbUtils

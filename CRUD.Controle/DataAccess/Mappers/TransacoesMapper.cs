@@ -1,5 +1,7 @@
 ﻿using CRUD.Controle.DataAccess.Helpers;
 
+// Mapeamento para associar os campos do bd aos do Model 
+
 namespace CRUD.Controle.DataAccess.Mappers
 {
     internal class TransacoesMapper

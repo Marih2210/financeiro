@@ -1,4 +1,6 @@
-﻿namespace CRUD.Controle.Model.Enum
+﻿// Model para definir os tipos de erro/retorno da API do backend
+
+namespace CRUD.Controle.Model.Enum
 {
     public enum ErrorType
     {

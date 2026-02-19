@@ -1,5 +1,7 @@
 ﻿using System.Runtime.Serialization;
 
+// Model Categoria
+
 namespace CRUD.Controle.Model.Categoria
 {
     [DataContract]

@@ -1,5 +1,7 @@
 ﻿using System.Runtime.Serialization;
 
+// Model Categoria com totais
+
 namespace CRUD.Controle.Model.Categoria;
 
 [DataContract]

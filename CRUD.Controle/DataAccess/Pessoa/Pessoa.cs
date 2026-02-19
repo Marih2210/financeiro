@@ -6,6 +6,8 @@ using System.Linq;
 using CRUD.Controle.DataAccess.Base;
 using CRUD.Controle.DataAccess.Mappers;
 
+// Camada de acesso aos dados para Pessoa
+
 namespace CRUD.Controle.DataAccess.Pessoa
 {
     public class Pessoa : BaseDAL
@@ -15,6 +17,8 @@ namespace CRUD.Controle.DataAccess.Pessoa
             var connString = GetConnectionString();  
             this.connection = new NpgsqlConnection(connString);
         }
+
+        // Método getAll com query relacionada a table do bd financeiro
 
         public List<Model.Pessoa.Pessoa> GetAll()
         {
@@ -29,6 +33,8 @@ namespace CRUD.Controle.DataAccess.Pessoa
             return new PessoaMapper().Map(items).ToList();
         }
 
+        // Método getbyId 
+
         public Model.Pessoa.Pessoa? GetById(int id)
         {
             string sql = @"
@@ -41,6 +47,8 @@ namespace CRUD.Controle.DataAccess.Pessoa
             var items = this.connection.Query(sql, new { id });
             return new PessoaMapper().Map(items).FirstOrDefault();
         }
+
+        // Método Insert com query especifica para pessoa
 
         public int Insert(Model.Pessoa.Pessoa pessoa)
         {
@@ -55,6 +63,8 @@ namespace CRUD.Controle.DataAccess.Pessoa
                 idade = pessoa.Idade
             });
         }
+
+        // Método Update com query especifica para pessoa
 
         public int Update(Model.Pessoa.Pessoa pessoa)
         {
@@ -71,6 +81,8 @@ namespace CRUD.Controle.DataAccess.Pessoa
                 idade = pessoa.Idade
             });
         }
+
+        // Método Delete com query especifica para pessoa
 
         public int Delete(int id)
         {

@@ -4,6 +4,8 @@ using CRUD.Controle.Model.Pessoa;
 using CRUD.Controle.Model.Result;
 using CRUD.Controle.Model.Enum;
 
+// Controller de Pessoa com conexão das classes de negócios e geração dos endpoints da API
+
 namespace CRUD.Controle.Services.Controllers
 {
     [ApiController]

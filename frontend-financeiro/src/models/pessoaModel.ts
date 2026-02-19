@@ -1,3 +1,5 @@
+// Model de pessoa
+
 export interface Pessoa {
     id?: number;
     nome: string;
